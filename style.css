@@ -1,0 +1,1169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: linear-gradient(
+    135deg,
+    #ff9ad5,
+    #9b5cff,
+    #ffb6e6
+);
+
+background-size: 300% 300%;
+
+animation: gradientMove 10s ease infinite;
+}
+
+
+/* Password screen */
+
+.lock-screen {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card {
+
+    width: 350px;
+    padding: 40px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,0.18);
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(15px);
+
+    color: white;
+
+    box-shadow:
+    0 0 30px rgba(255,255,255,0.4);
+
+}
+
+
+.card h1 {
+
+    font-size: 35px;
+    margin-bottom: 15px;
+
+}
+
+
+.card p {
+
+    margin-bottom: 25px;
+
+}
+
+
+input {
+
+    width: 100%;
+    padding: 15px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+}
+
+
+button {
+
+    padding: 15px 25px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    background: white;
+
+    color: #9b5cff;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+
+}
+
+
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(255,255,255,0.8);
+
+}
+
+
+/* Hidden page after unlock */
+
+.main-content {
+
+    display: none;
+
+    color: white;
+
+    text-align: center;
+
+    padding-top: 40vh;
+
+}.welcome-box {
+
+    width: 400px;
+    padding: 40px;
+
+    background: rgba(255,255,255,0.15);
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+    0 0 40px rgba(255,255,255,0.4);
+
+    animation: fadeIn 2s ease;
+
+}
+
+
+.welcome-box h1 {
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.welcome-box h2 {
+
+    font-size: 25px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.welcome-box p {
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+
+}
+
+
+.welcome-box button {
+
+    margin-top: 10px;
+
+}
+
+
+/* Smooth entrance animation */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(30px);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}.hearts {
+
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+
+}
+
+
+.heart {
+
+    position: absolute;
+
+    color: white;
+
+    font-size: 25px;
+
+    animation: float 8s linear infinite;
+
+    opacity: 0.7;
+
+}
+
+
+
+@keyframes float {
+
+    0% {
+
+        transform: translateY(100vh) scale(0);
+
+    }
+
+
+    100% {
+
+        transform: translateY(-10vh) scale(1);
+
+    }
+
+}.stars {
+
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+
+}
+
+
+.star {
+
+    position: absolute;
+
+    color: white;
+
+    font-size: 12px;
+
+    animation: twinkle 3s infinite;
+
+    opacity: 0.8;
+
+}
+
+
+@keyframes twinkle {
+
+    0%,100% {
+
+        opacity: 0.2;
+
+        transform: scale(0.8);
+
+    }
+
+
+    50% {
+
+        opacity: 1;
+
+        transform: scale(1.4);
+
+    }
+
+}
+.story {
+
+    margin-top: 100px;
+    padding: 40px;
+
+    color: white;
+
+    text-align: center;
+
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+.timeline {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:30px;
+
+    align-items:center;
+
+}
+
+
+.story-card {
+
+    width:80%;
+    max-width:600px;
+
+    padding:30px;
+
+    background:rgba(255,255,255,0.15);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+
+    box-shadow:
+    0 0 25px rgba(255,255,255,0.2);
+
+}
+
+
+.story-card h2 {
+
+    margin-bottom:15px;
+
+}
+
+.reveal {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+}
+
+@keyframes gradientMove {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+/* Why It's You - Flip Cards */
+
+.reasons-section {
+
+    opacity: 0;
+
+    transform: translateY(80px);
+
+    transition: all 1.5s ease;
+
+    margin-top: 250px;
+
+    padding: 50px;
+
+    text-align: center;
+
+    color: white;
+
+}
+
+
+.reasons-section h1 {
+
+    font-size: 40px;
+    margin-bottom: 20px;
+
+}
+
+
+.reasons-section p {
+
+    font-size: 18px;
+    margin-bottom: 40px;
+
+}
+
+
+
+.cards-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+
+}
+
+
+
+.flip-card {
+
+    width: 250px;
+
+    height: 300px;
+
+    perspective: 1000px;
+
+    cursor: pointer;
+
+}
+
+
+
+.flip-card-inner {
+
+    width: 100%;
+
+    height: 100%;
+
+    position: relative;
+
+    transition: transform 0.8s;
+
+    transform-style: preserve-3d;
+
+}
+
+
+
+.flip-card-front,
+.flip-card-back {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    backface-visibility: hidden;
+
+    border-radius: 25px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,0.18);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+0 8px 30px rgba(255,255,255,0.25);
+
+}
+
+
+
+.flip-card-front {
+
+    font-size: 25px;
+
+}
+
+
+
+.flip-card-back {
+
+    transform: rotateY(180deg);
+
+    font-size: 18px;
+
+}
+
+
+
+.flip-card.active .flip-card-inner {
+
+    transform: rotateY(180deg);
+
+}
+.flip-card {
+
+    transition: transform 0.25s ease;
+
+}
+
+
+.flip-card:active {
+
+    transform: scale(0.96);
+
+}
+
+.chapter-divider {
+
+    margin-top: 120px;
+    margin-bottom: 50px;
+
+    font-size: 30px;
+
+    opacity: 0.8;
+
+}
+
+.reasons-section.show {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+/* Mobile friendly flip cards */
+
+@media (max-width: 600px) {
+
+
+    .cards-container {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 25px;
+
+    }
+
+
+    .flip-card {
+
+        width: 85%;
+
+        height: 320px;
+
+    }
+
+
+    .flip-card-front {
+
+    font-size: 25px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+}
+
+
+    .flip-card-back {
+
+        font-size: 17px;
+
+        line-height: 1.5;
+
+    }
+
+
+    .reasons-section {
+
+        padding: 30px 20px;
+
+    }
+
+
+}
+
+/* Special last card */
+
+.special-card {
+
+    animation: heartbeat 3s infinite;
+
+}
+
+@keyframes heartbeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    5% {
+        transform: scale(1.05);
+    }
+
+    10% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.05);
+    }
+
+    20% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+/* Letter Section */
+
+.letter-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+}
+
+.letter-scene {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.magic-letter {
+    position: relative;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+}
+
+.letter-title {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #ffffff;
+}
+
+.letter-paper {
+    background: #fffaf0;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255,255,255,0.3);
+    text-align: left;
+    line-height: 1.8;
+    font-size: 18px;
+    color: #4b2c35;
+}
+
+.letter-paper p {
+    margin-bottom: 20px;
+}
+
+/* Magical Letter Effects */
+
+.magic-letter {
+    animation: floatLetter 4s ease-in-out infinite;
+}
+
+.letter-paper {
+    position: relative;
+    box-shadow:
+        0 0 25px rgba(255, 200, 220, 0.6),
+        0 0 50px rgba(255, 255, 255, 0.3);
+}
+
+.letter-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-shadow: 0 0 15px rgba(255,255,255,0.8);
+}
+
+@keyframes floatLetter {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+
+}
+
+/* Butterfly Landing Animation */
+
+.butterfly {
+    position: absolute;
+    top: 160px;
+    left: 50%;
+    z-index: 10;
+    animation: butterflyLand 6s ease-in-out infinite;
+}
+
+
+@keyframes butterflyLand {
+
+    0% {
+        transform: translate(240px, -170px) rotate(25deg);
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+        transform: translate(150px, -100px) rotate(-15deg);
+    }
+
+    50% {
+        transform: translate(60px, -40px) rotate(10deg);
+    }
+
+    75% {
+        transform: translate(10px, 0px) rotate(-5deg);
+    }
+
+    100% {
+        transform: translate(0px, 15px) rotate(0deg);
+    }
+
+}
+
+
+/* Real Butterfly Styling */
+
+.butterfly img {
+
+    width: 180px;
+    height: auto;
+
+    animation: wingFlap 1.2s ease-in-out infinite;
+
+    filter:
+    drop-shadow(0 0 12px rgba(170,100,255,0.8))
+    drop-shadow(0 0 30px rgba(170,100,255,0.4));
+
+}
+
+
+@keyframes wingFlap {
+
+    0% {
+        transform: scaleX(1);
+    }
+
+    25% {
+        transform: scaleX(0.8);
+    }
+
+    50% {
+        transform: scaleX(1);
+    }
+
+    75% {
+        transform: scaleX(0.85);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+
+}
+
+/* Magical Butterfly Sparkles */
+
+.sparkle {
+    position: absolute;
+    color: #d8a7ff;
+    font-size: 25px;
+    opacity: 0;
+    animation: sparkleGlow 3s ease-in-out infinite;
+}
+
+
+/* Different sparkle positions */
+
+.sparkle1 {
+    top: -20px;
+    left: 20px;
+    animation-delay: 0s;
+}
+
+.sparkle2 {
+    top: 20px;
+    left: -30px;
+    animation-delay: 0.8s;
+}
+
+.sparkle3 {
+    top: 60px;
+    left: 140px;
+    animation-delay: 1.5s;
+}
+
+.sparkle4 {
+    top: -40px;
+    left: 120px;
+    animation-delay: 2s;
+}
+
+
+@keyframes sparkleGlow {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.3) rotate(180deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.5) rotate(360deg);
+    }
+
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+/* Memory Photo Section */
+
+.memory-section {
+
+    padding: 60px 20px;
+
+    text-align: center;
+
+    color: white;
+
+}
+
+
+.memory-section h1 {
+
+    font-size: 40px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.memory-text {
+
+    font-size: 18px;
+
+    margin-bottom: 40px;
+
+}
+
+
+.memory-wall {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 35px;
+
+}
+
+
+.memory-photo {
+
+    background: white;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    width: 230px;
+
+    box-shadow:
+    0 0 25px rgba(180,120,255,0.5);
+
+    transition: transform 0.5s ease;
+
+}
+
+
+.memory-photo img {
+
+    width: 100%;
+
+    height: 260px;
+
+    object-fit: cover;
+
+    border-radius: 5px;
+
+}
+
+
+/* Scrapbook rotations */
+
+.photo1 {
+    transform: rotate(-6deg);
+}
+
+.photo2 {
+    transform: rotate(5deg);
+}
+
+.photo3 {
+    transform: rotate(-3deg);
+}
+
+.photo4 {
+    transform: rotate(7deg);
+}
+
+.photo5 {
+    transform: rotate(-5deg);
+}
+
+
+.memory-photo:hover {
+
+    transform: scale(1.08) rotate(0deg);
+
+}
+
+/* Secret Butterfly */
+
+.secret-butterfly {
+
+    font-size: 35px;
+
+    margin-top: 40px;
+
+    cursor: pointer;
+
+    display: inline-block;
+
+    animation: secretFloat 3s ease-in-out infinite;
+
+    filter: drop-shadow(0 0 15px rgba(180,120,255,0.9));
+
+}
+
+
+@keyframes secretFloat {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+
+}
+
+
+.secret-butterfly:hover {
+
+    transform: scale(1.3);
+
+}
+
+/* Final Surprise Cinematic Ending */
+
+.final-surprise {
+
+    min-height: 100vh;
+
+    background: black;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.final-surprise h1 {
+
+    font-size: 45px;
+
+    margin-bottom: 40px;
+
+    text-shadow:
+    0 0 15px white;
+
+}
+
+
+.final-surprise p {
+
+    max-width: 700px;
+
+    margin: 25px auto;
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+}
+
+
+.final-surprise h2 {
+
+    margin-top: 50px;
+
+    font-size: 35px;
+
+    color: #d8b4ff;
+
+    text-shadow:
+    0 0 20px #b47cff;
+
+}
+
+
+/* Stars */
+
+.stars {
+
+    position: absolute;
+
+    top: 20px;
+
+    width: 100%;
+
+    font-size: 35px;
+
+    letter-spacing: 40px;
+
+    animation: starGlow 3s infinite alternate;
+
+}
+
+
+@keyframes starGlow {
+
+    from {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+/* Love Timer */
+
+.love-timer {
+
+    margin-top: 70px;
+
+    text-align: center;
+
+}
+
+
+.love-timer p {
+
+    font-size: 22px;
+
+}
+
+
+.timer-box {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    margin-top: 30px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.timer-box div {
+
+    background: rgba(255,255,255,0.1);
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    min-width: 90px;
+
+    backdrop-filter: blur(10px);
+
+}
+
+
+.timer-box span {
+
+    display: block;
+
+    font-size: 35px;
+
+    color: #d8b4ff;
+
+}
+
+
+.timer-box small {
+
+    font-size: 15px;
+
+}
